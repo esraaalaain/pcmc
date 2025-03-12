@@ -29,8 +29,11 @@ async function specializationPlacement() {
             const container = document.getElementById("departments");
             container.innerHTML = "";
             specializations.forEach(spec => {
+
+                const uriEncodedName = encodeURI(spec.name);
+
                 container.innerHTML += `
-                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                    <a href="department.html?name=${uriEncodedName}"><div class="col-lg-3 col-md-6 col-sm-12 mb-4">
                                 <div
                                     class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
                                     <!-- <div class="icon"><img src="img/icon/de-icon01.png" alt="de-icon"></div> -->
@@ -39,7 +42,7 @@ async function specializationPlacement() {
                                         <p>${spec.description}</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div></a>
                 `;
             });
 
