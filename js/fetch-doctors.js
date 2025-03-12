@@ -22,6 +22,11 @@ async function fetchDoctors(spcalization) {
         const doctors = await response.json();
         console.log("doctors", doctors);
         doctorsList = doctors.rows.filter(doctor => doctor.department_name === spcalization);
+
+        if (doctorsList.length === 0) {
+            container.innerHTML = `<p style="color: red; text-align: center; margin-top: 3rem">لا يوجد أطباء حاليين في هذا القسم. </p>`;
+        }
+
     } catch (error) {
         console.error("Error fetching doctors:", error.message);
         container.innerHTML = `<p style="color: red; text-align: center;">حدث خطأ أثناء تحميل البيانات. </p>`;
