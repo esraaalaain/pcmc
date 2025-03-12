@@ -1,13 +1,82 @@
 let doctorsList = [];
+let specializations = [
+
+];
 
 document.addEventListener("DOMContentLoaded", async () => {
     await fetchDoctors();
+    // await getSpecilizations();
+    specializationPlacement();
 });
+
+
+
 
 const path = "https://api.easydoc.sa/his/pcmc";
 
 
 console.log("this is start hellow :)");
+
+
+async function specializationPlacement() {
+    try {
+
+        if (specializations.length === 0) {
+            specializations = await getSpecilizations();
+        }
+
+        if (specializations.length > 0) {
+            const container = document.getElementById("departments");
+            container.innerHTML = "";
+            specializations.forEach(spec => {
+                container.innerHTML += `
+                    <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon01.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>${spec.name}</h3>
+                                        <p>${spec.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+                `;
+            });
+
+        }
+
+
+    } catch (error) { }
+}
+
+async function getSpecilizations() {
+    const apiUrl = `${path}/departments`;
+    const response = await fetch(apiUrl, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": "Basic cGNtYzpFQHN5RG9jQHBjbWM="
+        },
+
+    });
+    console.log("this is response", response);
+    if (!response.ok) {
+        throw new Error(`HTTP Error: ${response.status}`);
+    }
+
+    const specializations = await response.json();
+
+    // remove html elements from the description
+    specializations.rows.forEach(spec => {
+        spec.description = stripHtml(spec.description);
+    });
+
+    specializationsList = specializations.rows;
+
+    console.log("this is specializationsList", specializationsList);
+    return specializationsList;
+}
 
 async function fetchDoctors() {
     const apiUrl = `${path}/doctors`;

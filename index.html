@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <style>
+        body {
+            margin: 0 auto;
+        }
+
         .modal-dialog {
             margin-top: 10vh !important;
             /* Adjust this if needed */
@@ -422,100 +426,9 @@
                             <span>أقسامنا</span>
                             <h2>استكشف أقسامنا الطبية</h2>
                         </div>
-                        <div class="row">
+                        <div class="row" id="departments">
                             <!-- Department Items with Bootstrap classes for layout and spacing -->
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon01.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>الرعاية الوقائية</h3>
-                                        <p>فحوصات روتينية, وتطعيمات, وفحوصات وخطط عافية شخصية لمساعدتك على البقاء بصحة
-                                            جيدة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon02.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>إدارة الأمراض المزمنة</h3>
-                                        <p>رعاية الخبراء للحالات مثل مرض السكري وارتفاع ضغط الدم والربو وأمراض القلب، مع
-                                            التركيز
-                                            على التعليم وإدارة الادوية وتعديل نمط الحياة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>صحة المرأة</h3>
-                                        <p>فحوصات أمراض النساء، وتنظيم الأسرة، والرعاية السابقة للولادة، وإدارة سن
-                                            اليأس.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <!-- <div class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-xl"> -->
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>الصحة السلوكية</h3>
-                                        <p>الاستشارات والعلاج السري للمخاوف المتعلقة بالصحة العقلية مثل القلق والاكتئاب
-                                            والتوتر.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>الرعاية العاجلة</h3>
-                                        <p>التقييم والعلاج الفوري للأمراض والاصابات الحادة على اساس عدم التعيين.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>خدمات الطوارئ</h3>
-                                        <p>رعاية طبية على مدار الساعة طوال أيام الأسبوع للحالات التي تهدد الحياة
-                                            والإصابات
-                                            الشديدة.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>خدمات الصحة المجتمعية</h3>
-                                        <p>برامج التوعية، وورش عمل التثقيف الصحي، والمبادرات لتعزيز الصحة والعافية داخل
-                                            المجتمع.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>إحالات الأخصائيين</h3>
-                                        <p>الوصول إلى شبكة من المتخصصين الموثوق بهم للحصول على رعاية واستشارات متخصصة.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
