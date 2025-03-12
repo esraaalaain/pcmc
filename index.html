@@ -1,0 +1,915 @@
+<!doctype html>
+<html class="no-js" lang="ar" dir="rtl">
+<!-- rtl -->
+
+<head lang="ar">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> مركز الرعاية الاولية </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Place favicon.ico in the root Internist, General Practitonery -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <!-- <link rel="stylesheet" href="css/slick.css"> -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .modal-dialog {
+            margin-top: 10vh !important;
+            /* Adjust this if needed */
+        }
+
+        .modal {
+            z-index: 1055 !important;
+        }
+
+        .modal-backdrop {
+            z-index: 1050 !important;
+        }
+
+        .department-item {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .icon img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .wame {
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .weekday-picker {
+            /* display: flex; */
+            /* border: 2px solid #0a1a41; */
+            /* border-radius: 10px;
+            gap: 10px;
+            overflow: hidden;
+            width: fit-content; */
+        }
+
+        .day-btn {
+            flex: 1;
+            text-align: center;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            /* font-size: 14px !important; */
+            color: #013243 !important;
+        }
+
+        .day-btn p {
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .day-btn.selected {
+            background-color: #013243 !important;
+            color: white !important;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header-area">
+        <div class="header-top second-header d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-3 d-none d-lg-block">
+                    </div>
+                    <div class="col-lg-4 col-md-8 d-none  d-md-block">
+                        <div class="header-cta">
+                            <ul>
+                                <li>
+                                    <i class="icon dripicons-mail"></i>
+                                    <span>Support@pcmc.med.sa</span>
+                                </li>
+                                <li>
+                                    <i class="icon dripicons-phone"></i>
+                                    <span>0124222240</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-3 d-none d-lg-block">
+                        <div class="header-social text-right">
+                            <span>
+                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            </span>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <div id="header-sticky" class="menu-area">
+            <div class="container">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="main-menu text-right pr-15">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li class="has-sub">
+                                            <a href="#">الرئيسية</a>
+                                        </li>
+
+                                        <li class="has-sub pr-5">
+                                            <a href="#services">الخدمات</a>
+
+                                        </li>
+
+                                        <li class="has-sub">
+                                            <a href="#departments">الأقسام</a>
+                                        </li>
+
+                                        <li class="has-sub">
+                                        <li>
+                                            <a href="#">من نحن</a>
+                                        </li>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 d-none d-lg-block text-left">
+                            <a href="https://wa.me/9660124222240" class="top-btn">احجز الآن <i
+                                    class="fas fa-chevron-right"></i></a>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+    <!-- main-area -->
+    <main>
+        <!-- slider-area -->
+        <section id="home" class="slider-area fix p-relative">
+
+            <div class="slider-active2">
+                <div class="single-slider slider-bg d-flex align-items-center"
+                    style="background-image:url(img/an-bg/header-bg.png)">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="slider-content s-slider-content  text-right">
+                                    <h2 data-animation="fadeInUp" data-delay=".4s">الرعاية الاولية الطبية
+                                        <span>شريكك في الصحة</span>
+                                    </h2>
+                                    <p data-animation="fadeInUp" data-delay=".6s">تعد شركة الرعاية الاولية الطبية مركز
+                                        الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
+                                        شاملةوعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية وشاملة.
+                                    </p>
+                                    <div class="slider-btn mt-25">
+                                        <!-- <a href="#" class="btn ss-btn" data-animation="fadeInRight"
+                                            data-delay=".8s">Learn More <i class="fas fa-chevron-right"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <img src="img/bg/header-img.png" alt="header-img" class="header-img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+        <!-- booking-area -->
+        <section id="booking" class="booking-area p-relative">
+            <div class="container">
+                <form action="#" class="contact-form">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul>
+                                <li>
+                                    <div class="contact-field p-relative c-name">
+                                        <input type="text" placeholder="الاسم" id="name">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-email">
+                                        <select class="custom-select" id="inputGroupSelect04"
+                                            aria-label="Example select with button addon">
+                                            <option selected>اختر طبيب...</option>
+                                            <option value="1">د. مجاهد </option>
+                                            <option value="2">د. نهال احمد</option>
+                                            <option value="3">د. احمد محمد</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-field p-relative c-subject mb-20"> <select class="custom-select"
+                                            id="inputGroupSelect04" aria-label="Example select with button addon">
+                                            <option selected>إخترالقسم...</option>
+                                            <option value="1">طب اسرة</option>
+                                            <option value="2">طبيب عام</option>
+                                        </select>
+                                    </div>
+
+                                </li>
+                                <li>
+                                    <div class="slider-btn">
+                                        <a href="https://wa.me/9660124222240" class="btn ss-btn"
+                                            data-animation="fadeInRight" data-delay=".8s">إحجز الأن<i
+                                                class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </section>
+        <!-- booking-area-end -->
+
+        <!-- services-area -->
+        <section id="services" class="services-area services-bg services-two pt-100"
+            style="background-image:url(img/an-bg/an-bg02.png); background-size: contain; background-repeat: no-repeat;background-position: center center;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-8">
+                        <div class="section-title text-center pl-40 pr-40 mb-80">
+                            <span> خدماتنا</span>
+                            <h2>الخدمات المميزة</h2>
+                            <p class="mt-10">
+                                نوفر لك خدمات طبية متكاملة عن بعد، تتيح لك التواصل مع الأطباء بسهولة من أي مكان.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row sr-line">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="s-single-services text-center active">
+                            <div class="services-icon">
+                                <img src="img/icon/sr-icon01.png" alt="img">
+                            </div>
+                            <div class="second-services-content">
+                                <h5><a href="#services">الاستشارات الطبية عبر الفيديو</a></h5>
+                                <p>يمكنك حجز موعد والتحدث مع طبيبك عبر مكالمة فيديو مباشرة، مما يسهل عليك الحصول على
+                                    الرعاية
+                                    الصحية من أي مكان.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="s-single-services text-center">
+                            <div class="services-icon">
+                                <img src="img/icon/sr-icon02.png" alt="img">
+                            </div>
+                            <div class="second-services-content">
+                                <h5><a href="#services">حجز المواعيد</a></h5>
+                                <p>سهولة حجز المواعيد الطبية مع الأطباء المتاحين عبر الإنترنت، مما يتيح لك اختيار
+                                    التوقيت
+                                    المناسب لك بكل سهولة.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="s-single-services text-center">
+                            <div class="services-icon">
+                                <img src="img/icon/cunt-icon01.png" alt="img">
+                            </div>
+                            <div class="second-services-content">
+                                <h5><a href="#services">متابعة الحالات المزمنة</a></h5>
+                                <p>للأشخاص الذين يعانون من أمراض مزمنة، نوفر متابعة دورية عبر الاتصال عن بعد لضمان
+                                    استقرار
+                                    الحالة الصحية وتحسين جودة الحياة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- services-area-end -->
+        <section class="newslater-area pb-50"
+            style="background-image: url(img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;">
+            <div class="container">
+                <div class="row align-items-end">
+                    <div class="col-xl-4 col-lg-4">
+                        <img src="img/bg/mobile.png">
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-lg-4">
+                        <div class="section-title mb-100">
+                            <span>احجز بسهولة</span>
+                            <h2>إحجز موعد مع طبيب الان</h2>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                        <form name="ajax-form" id="contact-form4" action="#" method="post"
+                            class="contact-form newslater pb-130">
+                            <div class="form-group">
+
+                                <a class="btn btn-custom " href="https://wa.me/9660124222240">ابدأ الحجز الان <i
+                                        class="fas fa-chevron-right"></i></a>
+                            </div>
+                            <!-- /Form-email -->
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <!-- about-area -->
+        <section id="about" class="about-area about-p pt-65 pb-80 p-relative"
+            style="background-image:url(img/an-bg/an-bg03.png); background-size: contain; background-repeat: no-repeat;background-position: center center;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12 col-sm-12 text-right">
+                        <!-- TOD: add image and remove s-about-img  -->
+                        <div class="border-img rounded-pills">
+                            <img src="img/bg/mrafiq-3.jpeg" alt="img">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="about-content s-about-content text-right pl-30">
+                            <div class="section-title mb-20 align-items-start">
+                                <span> خدمات طبية متكاملة</span>
+                                <h2> مرافق وخدمات على أحدث طراز</h2>
+                            </div>
+                            <p>
+                                :تم تجهيز عيادتنا الحديثة بأحدث التقنيات الطبية وأدوات التشخيص لضمان التشخيص الدقيق
+                                والعلاج الفعال. نحن نقدم
+                                .لراحتك
+                                (EKG)
+                            </p>
+
+                            <ul>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div>
+                                    <div class="text">خدمات في الموقع: خدمات المختبرات ، والتصوير بالأشعة السينية ،
+                                        واختبار تخطيط القلب
+                                        الكهربائي.
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div>
+                                    <div class="text">
+                                        سيارة إسعاف مجهزة بالكامل: للنقل في حالات الطوارئ والرعاية قبل دخول المستشفى
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon"><i class="fas fa-chevron-right"></i></div>
+                                    <div class="text">
+                                        خدمات الصيدلة: صرف الأدوية والاستشارات المتخصصة بشأن التفاعلات الدوائية
+                                        والاستخدام
+                                    </div>
+                                </li>
+                                <div></div>
+                            </ul>
+
+                            <div class="slider-btn mt-30">
+                                <a href="" class="btn ss-btn" data-animation="fadeInRight" data-delay=".8s">إقرأ المزيد
+                                    <i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- department-area -->
+        <section class="department-area cta-bg pb-70 mt-10 fix"
+            style="background-image:url(img/an-bg/an-bg05.png); background-size: contain;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <div class="section-title mb-50 ">
+                            <span>أقسامنا</span>
+                            <h2>استكشف أقسامنا الطبية</h2>
+                        </div>
+                        <div class="row">
+                            <!-- Department Items with Bootstrap classes for layout and spacing -->
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon01.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>الرعاية الوقائية</h3>
+                                        <p>فحوصات روتينية, وتطعيمات, وفحوصات وخطط عافية شخصية لمساعدتك على البقاء بصحة
+                                            جيدة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon02.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>إدارة الأمراض المزمنة</h3>
+                                        <p>رعاية الخبراء للحالات مثل مرض السكري وارتفاع ضغط الدم والربو وأمراض القلب، مع
+                                            التركيز
+                                            على التعليم وإدارة الادوية وتعديل نمط الحياة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>صحة المرأة</h3>
+                                        <p>فحوصات أمراض النساء، وتنظيم الأسرة، والرعاية السابقة للولادة، وإدارة سن
+                                            اليأس.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <!-- <div class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-xl"> -->
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>الصحة السلوكية</h3>
+                                        <p>الاستشارات والعلاج السري للمخاوف المتعلقة بالصحة العقلية مثل القلق والاكتئاب
+                                            والتوتر.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>الرعاية العاجلة</h3>
+                                        <p>التقييم والعلاج الفوري للأمراض والاصابات الحادة على اساس عدم التعيين.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>خدمات الطوارئ</h3>
+                                        <p>رعاية طبية على مدار الساعة طوال أيام الأسبوع للحالات التي تهدد الحياة
+                                            والإصابات
+                                            الشديدة.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>خدمات الصحة المجتمعية</h3>
+                                        <p>برامج التوعية، وورش عمل التثقيف الصحي، والمبادرات لتعزيز الصحة والعافية داخل
+                                            المجتمع.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+                                <div
+                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
+                                    <!-- <div class="icon"><img src="img/icon/de-icon03.png" alt="de-icon"></div> -->
+                                    <div class="text">
+                                        <h3>إحالات الأخصائيين</h3>
+                                        <p>الوصول إلى شبكة من المتخصصين الموثوق بهم للحصول على رعاية واستشارات متخصصة.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="loading" id="loading"></div>
+
+        <!-- pricing-area -->
+        <section id="pricing" class="pricing-area pb-70"
+            style="background-image: url(img/an-bg/an-bg08.png);background-position: center; background-repeat: no-repeat;">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-title center-align mb-60 text-center">
+                            <span>اطباءنا</span>
+                            <h2>اطبائنا المتميزين</h2>
+                            <p>
+                                تطمن على صحتك وخذ الخطوة الاولى للعلاج
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12">
+                        <div class="pricing-box text-center mb-60">
+                            <div class="pricing-head">
+                                <h4>د. مجاهد</h4>
+                                <div class="price-count mb-30">
+                                    <h2>طبيب عام مُمارس</h2>
+                                </div>
+                                <img src="img/icon/mojahed.png" alt="pricon">
+                            </div>
+                            <div class="pricing-body mb-40  text-right bold ">
+                                <p>حاصل على بكالوريوس الطب والجراحة، وزمالة كلية الجراحين الملكية بإدنبرة، بالإضافة إلى
+                                    تدريب مكثف في الجراحة العامة</p>
+                                <ul>
+                                    <li> تقديم استشارات طبية شاملة. </li>
+                                    <li>تشخيص وعلاج الأمراض الشائعة.</li>
+                                    <li> تقديم التطعيمات</li>
+
+                                </ul>
+                            </div>
+                            <div class="pricing-btn ">
+                                <a href="https://wa.me/9660124222240" class="btn">إحجز الأن <i
+                                        class="fas fa-chevron-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="pricing-box  text-center mb-60">
+                            <div class="pricing-head">
+                                <h4>د. نهال أحمد</h4>
+                                <div class="price-count mb-30">
+                                    <h2>طبيبة مُمارسة عامة</h2>
+                                </div>
+                                <img src="img/icon/nehal.png" alt="pricon">
+                            </div>
+                            <div class="pricing-body mb-40  text-right">
+                                <p>
+                                    مُتخصصة في تقديم الرعاية الصحية الأولية الشاملة، مع التركيز على التشخيص والعلاج
+                                    والوقاية من الأمراض.
+                                </p>
+                                <ul>
+                                    <li>تشخيص وعلاج الأمراض الشائعة</li>
+                                    <li>مُتابعة الأمراض المُزمنة.</li>
+                                    <li> تقديم التطعيمات</li>
+
+                                </ul>
+                            </div>
+                            <div class="pricing-btn">
+                                <a href="https://wa.me/9660124222240" class="btn">إحجز الأن <i
+                                        class="fas fa-chevron-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="pricing-box text-center mb-60">
+                            <div class="pricing-head">
+                                <h4>د. أحمد محمد زين</h4>
+                                <div class="price-count mb-30">
+                                    <h2>طبيب أسرة</h2>
+                                </div>
+                                <img src="img/icon/ahmed.png" alt="pricon">
+                            </div>
+                            <div class="pricing-body mb-40  text-right">
+                                <p>
+                                    طبيب أسرة ذو خبرة واسعة، ملتزم بتقديم رعاية صحية عالية الجودة لكافة أفراد عائلتك.
+                                </p>
+                                <ul>
+                                    <li> استشارات طبية عن بعد</li>
+                                    <li> رعاية الأمومة والطفولة </li>
+                                    <li> متابعة الأمراض المزمنة </li>
+                                </ul>
+                            </div>
+                            <div class="pricing-btn">
+                                <a href="https://wa.me/9660124222240" class="btn">إحجز الأن <i
+                                        class="fas fa-chevron-right "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- main-area-end -->
+    <!-- footer -->
+
+    <footer class="footer-bg footer-p">
+        <div class="overly"><img src="img/an-bg/footer-bg.png" alt="rest"></div>
+        <div class="footer-top pb-30" style="background-color: #ECF1FA;">
+            <div class="container">
+                <div class="row justify-content-between">
+
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="flog mb-35">
+                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
+                            </div>
+                            <div class="footer-text mb-20">
+                                <p>نحن ملتزمون بتقديم أفضل خدمات الرعاية الصحية عن بعد، مما يتيح لك التواصل مع الأطباء
+                                    بكل
+                                    سهولة وراحة.</p>
+                            </div>
+                            <div class="footer-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-2 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h5>روابطنا</h5>
+                            </div>
+                            <div class="footer-link">
+                                <ul>
+                                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> الرئيسية</a></li>
+                                    <li><a href="#services"><i class="fas fa-chevron-right"></i> الخدمات</a></li>
+
+                                    <li><a href="#departments"><i class="fas fa-chevron-right"></i> الأقسام</a></li>
+
+                                    <li><a href="#about"><i class="fas fa-chevron-right"></i> من نحن</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h5>للشكاوى والاقتراحات</h5>
+                            </div>
+                            <div class="footer-link">
+                                <div class="f-contact">
+                                    <ul>
+                                        <li>
+                                            <i class="icon dripicons-phone "></i>
+                                            0124222240
+                                        </li>
+                                        <li>
+                                            <i class="icon dripicons-mail"></i>
+                                            <a href="mailto:support@pcmc.med.sa">support@pcmc.med.sa</a>
+                                        </li>
+                                        <li>
+                                            <i class="fal fa-map-marker-alt"></i>
+                                            <span>مكة المكرمة، المملكة العربية السعودية</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h5> للدعم الفني</h5>
+                            </div>
+                            <div class="footer-link">
+                                <div class="f-contact">
+                                    <ul>
+
+                                        <li>
+                                            <i class="icon dripicons-mail"></i>
+                                            <a href="mailto:support@pcmc.med.sa">support@pcmc.med.sa</a>
+                                        </li>
+                                        <li>
+                                            <img width="150" src="img/brand/3.png" alt="health">
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-text text-center">
+                            <p>&copy; 2025 جميع الحقوق محفوظة - مركز الرعاية الأولية الطبية - مكة المكرمة | رقم السجل
+                                التجاري: 4031101006 | رقم ضريبة القيمة المضافة: 312266234100003</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- footer-end -->
+    <section>
+        <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content  text-white">
+                    <div class="modal-header appointment_modal_header">
+                        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">حجز الموعد</h5>
+                        <button type="button" class="close modal_close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body appointment_modal_body">
+                        <!-- add loading -->
+                        <div id="loading" class="d-none position-fixed top-50 start-50 translate-middle">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="successMessage" style="display:none" id="successMessage">
+
+                            <div class="alert alert-success d-flex flex-column align-items-center text-center"
+                                role="alert">
+                                <i class="fas fa-check-circle fa-2x mb-2"></i>
+                                <span>تم حجز الموعد بنجاح</span>
+                            </div>
+                        </div>
+                        <form id="addAppointmentForm">
+                            <!-- add error validation -->
+                            <label for="patient">
+                                <h5 class="text-primary text-right"> الملف الطبي</h5>
+                            </label>
+                            <select class="form-control rounded-pill rounded-pill" id="patient" name="patient">
+                                <option value="">إختر</option>
+                                <option value="patient_id">لدي ملف</option>
+                                <option value="add_new">فتح ملف جديد</option>
+                            </select>
+                            <div id="patientIdField" style="display:none;">
+                                <label for="patient_id">
+                                    <h5 class="text-primary text-right">رقم الهوية</h5>
+                                </label>
+                                <input type="text" class="form-control rounded-pill" onkeyup="searchByNationalId();"
+                                    id="national_id" name="national_id" placeholder="ادخل رقم الهوية">
+
+                                <div id="searchResult"></div>
+                                <div id="patient-details"></div>
+
+                            </div>
+                            <div id="patientDetails" style="display:none;">
+                                <input type="hidden" id="patient_id" value="add_new">
+
+                                <label for="p_name">
+                                    <h5 class="text-primary text-right">اسم المراجع</h5>
+                                </label>
+                                <input type="text" class="form-control rounded-pill" name="p_name" id="patient_name">
+                                <label for="p_national_id">
+                                    <h5 class="text-primary text-right">رقم هوية المراجع</h5>
+                                </label>
+                                <input type="text" class="form-control rounded-pill" name="p_national_id"
+                                    id="p_national_id">
+                                <label for="p_email">
+                                    <h5 class="text-primary text-right">البريد الالكتروني</h5>
+                                </label>
+                                <input type="email" class="form-control rounded-pill" name="p_email" id="patient_email">
+                                <label for="p_phone">
+                                    <h5 class="text-primary text-right">رقم الهاتف</h5>
+                                </label>
+                                <input type="text" class="form-control rounded-pill" name="p_phone" id="patient_phone">
+                                <label for="p_gender">
+                                    <h5 class="text-primary text-right">الجنس</h5>
+                                </label>
+                                <select class="form-control rounded-pill" name="p_gender" id="patient_gender">
+                                    <option value="Male">رجل</option>
+                                    <option value="Female">إمرأة</option>
+                                </select>
+                            </div>
+
+                            <label for="doctor" class="pt-3">
+                                <h5 class="text-primary text-right">الطبيب</h5>
+                            </label>
+                            <input type="text" class="form-control rounded-pill" id="dr-name" name="dr-name"
+                                value="د. مجاهد" readonly>
+                            <input type="hidden" id="doctor-id" name="doctor-id">
+                            <label for="date" class="pt-3">
+                                <h5 class="text-primary text-right">اختر اليوم</h5>
+                            </label>
+                            <div class="weekday-picker bg-light flex-d  p-0 m-0" id="weekday-picker">
+                                <!-- will updated  -->
+                            </div>
+                            <h5 class="mt-3 text-primary">التاريخ المختار: <span id="selectedDate">لايوجد</span></h5>
+                            <input type="hidden" id="date" name="date">
+
+                            <!-- <input type="text" class="form-control rounded-pill" id="date" name="date" readonly> -->
+                            <label for="aslots" class="pt-3">
+                                <h5 class="text-primary text-right">الوقت المتاح</h5>
+                            </label>
+                            <select class="form-control rounded-pill" name="time_slot" id="aslots"></select>
+                            <label for="visit_description" class="pt-3">
+                                <h5 class="text-primary text-right">نوع الزيارة</h5>
+                            </label>
+                            <select class="form-control rounded-pill" name="visit_description"
+                                id="visit_description"></select>
+                            <label for="remarks" class="pt-3">
+                                <h5 class="text-primary text-right">ملاحظة</h5>
+                            </label>
+                            <input type="text" class="form-control rounded-pill" id="remarks" name="remarks">
+                            <label for="visit_charges" class="pt-3">
+                                <h5 class="text-primary text-right">سعر الاستشارة</h5>
+                            </label>
+                            <input type="number" class="form-control rounded-pill " name="visit_charges"
+                                id="visit_charges" min="0" readonly>
+
+                            <!-- <input type="checkbox" id="pay_now_appointment " name="pay_now_appointment"
+                                value="pay_now_appointment">
+                            <label for="pay_now_appointment">إدفع الان</label> -->
+
+                            <button type="button" class="btn btn-primary mt-3 float-right" onclick="bookAppointment()">
+                                تأكيد الحجز
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- JS here -->
+    <!-- JS here -->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/one-page-nav-min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <!-- <script src="js/slick.min.js"></script> -->
+    <script src="js/ajax-form.js"></script>
+    <script src="js/paroller.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/js_isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/parallax-scroll.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/element-in-view.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/api.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js"></script> -->
+
+
+</body>
+
+
+<script>
+    $(document).ready(function () {
+        $("#patient").change(function () {
+            if ($(this).val() === "add_new") {
+                $("#patientDetails").slideDown();
+                $("#patientIdField").slideUp();
+
+            } else if ($(this).val() === "patient_id") {
+                $("#patientIdField").slideDown();
+                $("#patientDetails").slideUp();
+            } else {
+                $("#patientDetails").slideUp();
+                $("#patientIdField").slideUp();
+            }
+        });
+    });
+</script>
+
+</html>

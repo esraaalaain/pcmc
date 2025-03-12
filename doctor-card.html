@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="ar" dir="rtl">
+<!-- rtl -->
+
+<head lang="ar">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> مركز الرعاية الاولية </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <!-- <link rel="stylesheet" href="css/slick.css"> -->
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .department-item {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .icon img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .wame {
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bg-light {
+            background-color: #E7F0F5 !important;
+        }
+
+        .pricing-body {
+            padding-left: 0 !important;
+            padding: 5px !important;
+        }
+    </style>
+</head>
+<div class="col-lg-4 col-md-12">
+    <div class="pricing-box text-center mb-60">
+        <div class="row align-items-center ">
+            <div class="col-3   ">
+                <img class="rounded-circle border  border-primary" src="img/icon/mojahed.png" alt="doctor-image">
+            </div>
+            <div class=" col-9 text-right">
+                <h4>د. مجاهد</h4>
+                <div class="price-count mb-30">
+                    <h2>طبيب عام مُمارس</h2>
+                </div>
+            </div>
+        </div>
+        <div class="pricing-body  text-right p-3">
+            <p>حاصل على بكالوريوس الطب والجراحة، وزمالة كلية الجراحين الملكية بإدنبرة، بالإضافة إلى
+                تدريب مكثف في الجراحة العامة</p>
+            <ul>
+                <li> تقديم استشارات طبية شاملة. </li>
+                <li> تشخيص وعلاج الأمراض الشائعة. </li>
+                <li> تقديم التطعيمات </li>
+            </ul>
+            <div class="bg-light p-3 mt-3 row-12">
+                <h5>الاوقات المتاحة</h5>
+                <ul class=" d-flex justify-content-between">
+                    <li class="bg-white rounded-pill p-1 m-1  ">السبت</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الأحد</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الاثنين</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الثلاثاء</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الأربعاء</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الخميس</li>
+                    <li class="bg-white rounded-pill p-1 m-1  ">الجمعة</li>
+                </ul>
+            </div>
+        </div>
+        <div class="pricing-btn">
+            <a class="btn book-now-btn" data-doctor-id="12345" data-doctor-name="د. مجاهد">إحجز الأن <i
+                    class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Placeholder for Modal -->
+<div id="modalContainer"></div>
+
+<script>
+    $(document).ready(function () {
+        $(".book-now-btn").click(function () {
+            // Get doctor data from button attributes
+            let doctorId = $(this).data("doctor-id");
+            let doctorName = $(this).data("doctor-name");
+
+            // Load the modal and pass data
+            $("#modalContainer").load("appointment-modal.html #exampleModal", function () {
+                // Show the modal after it's loaded
+                $("#exampleModal").modal("show");
+
+                // Set doctor name and ID in the modal
+                $("#dr-name").val(doctorName);
+                $("#dr-name").attr("data-doctor-id", doctorId);
+            });
+        });
+    });
+</script>
+</body>
