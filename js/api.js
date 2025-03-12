@@ -17,42 +17,38 @@ const path = "https://api.easydoc.sa/his/pcmc";
 
 console.log("this is start hellow :)");
 
-
 async function specializationPlacement() {
     try {
-
         if (specializations.length === 0) {
-            specializations = await getSpecilizations();
+            specializations = await getSpecializations();
         }
 
         if (specializations.length > 0) {
             const container = document.getElementById("departments");
             container.innerHTML = "";
+
             specializations.forEach(spec => {
+                const uriEncodedName = encodeURIComponent(spec.name);
 
-                const uriEncodedName = encodeURI(spec.name);
-
-                container.innerHTML += `
-                    <a href="department.html?name=${uriEncodedName}"><div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-                                <div
-                                    class="department-item bg-light p-4 d-flex flex-column justify-content-center align-items-center shadow bg-white rounded-pill p-5 ">
-                                    <!-- <div class="icon"><img src="img/icon/de-icon01.png" alt="de-icon"></div> -->
-                                    <div class="text">
-                                        <h3>${spec.name}</h3>
-                                        <p>${spec.description}</p>
-                                    </div>
-                                </div>
-                            </div></a>
+                const specializationItem = `
+                    <div class="col-lg-3 col-md-4 col-sm-6  border bg-white">
+                        <a href="department.html?name=${uriEncodedName}">
+                            <div class="department-item ">
+                                <h3>${spec.name}</h3>
+                                <p>${spec.description}</p>
+                            </div>
+                        </a>
+                    </div>
                 `;
+                container.innerHTML += specializationItem;
             });
-
         }
-
-
-    } catch (error) { }
+    } catch (error) {
+        console.error("Error loading specializations:", error);
+    }
 }
 
-async function getSpecilizations() {
+async function getSpecializations() {
     const apiUrl = `${path}/departments`;
     const response = await fetch(apiUrl, {
         method: "GET",
@@ -104,7 +100,7 @@ async function fetchDoctors() {
         }
 
         const doctors = await response.json();
-        doctorsList = doctors.rows; // Assign the fetched doctors to the global variable
+        doctorsList = doctors.rows;
         displayDoctors(doctorsList);
     } catch (error) {
         console.error("Error fetching doctors:", error.message);
@@ -161,7 +157,7 @@ window.searchByNationalId = function () {
 };
 
 function displayDoctors(doctors) {
-    const container = document.querySelector(".pricing-area .row");
+    const container = document.getElementById("doctors");
     container.innerHTML = "";
 
     doctors.forEach(doctor => {
