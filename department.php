@@ -65,15 +65,6 @@
             transition: all 0.3s;
         }
 
-        .weekday-picker {
-            /* display: flex; */
-            /* border: 2px solid #0a1a41; */
-            /* border-radius: 10px;
-            gap: 10px;
-            overflow: hidden;
-            width: fit-content; */
-        }
-
         .day-btn {
             flex: 1;
             text-align: center;

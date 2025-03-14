@@ -1,0 +1,35 @@
+.header-banner {
+    background-color: rgb(63, 123, 151);
+    color: white;
+    text-align: center;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5em;
+    font-family: 'majalla-Bold';
+    font-weight: bold;
+    user-select: none;
+}
+
+.header-banner:nth-child(even) {
+    background-color: #74a6be;
+}
+
+.header-banner::after {
+    display: block;
+    background: radial-gradient(circle, rgba(255, 255, 255, .1) 20%, rgba(49, 107, 134, .5) 130%);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.header-banner-area {
+
+    box-shadow: 10px 10px 30px rgb(20, 64, 75);
+}

@@ -15,13 +15,14 @@
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
     <script src="https://kit.fontawesome.com/fd166e4c96.js" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/dripicons.css">
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/meanmenu.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/pcmc.css">
     <style>
         body {
             margin: 0 auto;
@@ -93,49 +94,43 @@
     <!-- main-area -->
     <main>
         <!-- slider-area -->
-        <section id="home" class="slider-area fix p-relative">
+        <section id="home" class="">
 
             <div class="slider-active2">
-                <div class="single-slider slider-bg d-flex align-items-center"
+                <div class="single-slider d-flex align-items-center"
                     style="background-image:url(img/an-bg/header-bg.png)">
-                    <div class="container">
+                    <div class="" style=" width: 100%; margin: 0; overflow: hidden;">
                         <div class="row align-items-center">
-                            <div class="col-lg-5">
-                                <div class="slider-content s-slider-content  text-right">
-                                    <h2 data-animation="fadeInUp" data-delay=".4s">الرعاية الاولية الطبية
-                                        <span>شريكك في الصحة</span>
-                                    </h2>
-                                    <p data-animation="fadeInUp" data-delay=".6s">تعد شركة الرعاية الاولية الطبية مركز
-                                        الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
-                                        شاملةوعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية وشاملة.
-                                    </p>
-                                    <div class="slider-btn mt-25">
-                                        <!-- <a href="#" class="btn ss-btn" data-animation="fadeInRight"
-                                            data-delay=".8s">Learn More <i class="fas fa-chevron-right"></i></a> -->
+                            <div class="col-lg-12" style="padding: 2rem; padding-bottom: 0">
+                                <div class="slider-content s-slider-content text-right">
+                                    <div class="row" style="margin: 0; padding: 0">
+                                        <div class="col-md-6">
+                                            <h2>الرعاية الاولية الطبية
+                                                <span><br>شريكك في الصحة</span>
+                                            </h2>
+                                            <p style="margin: 0; padding:0">تعد شركة الرعاية الاولية الطبية مركز
+                                                الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
+                                                شاملة وعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية وشاملة.
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7">
+                            <div class="col-lg-12 header-banner-area">
                                 <div class="row">
-                                    <div class=" col  p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
-                                        <i class="fa-solid fa-house"></i>
+                                    <div class="col-sm align-center header-banner">
                                         الاطباء
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                    <div class="col-sm align-center header-banner">
                                         الاقسام
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                    <div class="col-sm align-center header-banner">
                                         الاقسام
                                     </div>
-                                    <div class="w-100"></div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                    <div class="col-sm align-center header-banner">
                                         الإسعاف
-                                    </div>
-                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
-                                        السياحة العلاجية
-                                    </div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
-                                        الطب الاتصالي
                                     </div>
 
                                 </div>

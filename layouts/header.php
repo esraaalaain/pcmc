@@ -35,7 +35,7 @@
     </div>
     <!--  -->
     <div id="header-sticky" class="menu-area">
-        <div class="container">
+        <div style="padding: 0 2rem;">
             <div class="second-menu">
                 <div class="row align-items-center" style="justify-content: space-between;">
                     <div class="col-xl-2 col-lg-2">
