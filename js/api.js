@@ -3,13 +3,13 @@ let specializations = [
 
 ];
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await fetchDoctors();
-    // await getSpecilizations();
-    specializationPlacement();
-});
 
-
+async function indexInit() {
+    document.addEventListener("DOMContentLoaded", async () => {
+        await fetchDoctors();
+        specializationPlacement();
+    });
+}
 
 
 const path = "https://api.easydoc.sa/his/pcmc";
