@@ -344,7 +344,7 @@
                 </div>
             </div>
         </section>
-
+        <?php include 'whatsapp.php' ?>
     </main>
     <!-- main-area-end -->
     <?php include 'layouts/footer.php'; ?>

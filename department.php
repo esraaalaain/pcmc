@@ -128,6 +128,7 @@
     <?php include 'layouts/footer.php'; ?>
 
 
+    <?php include 'whatsapp.php' ?>
 
     <section>
         <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -279,8 +280,8 @@
     <script>
         departmentInit();
 
-        $(document).ready(function() {
-            $("#patient").change(function() {
+        $(document).ready(function () {
+            $("#patient").change(function () {
                 if ($(this).val() === "add_new") {
                     $("#patientDetails").slideDown();
                     $("#patientIdField").slideUp();
