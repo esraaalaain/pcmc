@@ -107,11 +107,11 @@
                                         <div class="col-md-6">
                                             <h2>الرعاية الاولية الطبية
                                                 <span><br>شريكك في الصحة</span>
-                                            </h2>
+                                    </h2>
                                             <p style="margin: 0; padding:0">تعد شركة الرعاية الاولية الطبية مركز
-                                                الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
+                                        الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
                                                 شاملة وعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية وشاملة.
-                                            </p>
+                                    </p>
                                         </div>
                                         <div class="col-md-6">
                                         </div>
@@ -491,8 +491,8 @@
     <script>
         indexInit();
 
-        $(document).ready(function() {
-            $("#patient").change(function() {
+        $(document).ready(function () {
+            $("#patient").change(function () {
                 if ($(this).val() === "add_new") {
                     $("#patientDetails").slideDown();
                     $("#patientIdField").slideUp();
