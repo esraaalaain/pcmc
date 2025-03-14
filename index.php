@@ -117,24 +117,30 @@
                             </div>
                             <div class="col-lg-7">
                                 <div class="row">
-                                    <div class=" col  p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                    <div class=" col  p-3 align-center"
+                                        style="background-color:rgb(63, 123, 151); color: white; text-align:center">
                                         <i class="fa-solid fa-house"></i>
                                         الاطباء
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                    <div class="col p-3 align-center"
+                                        style="background-color: #74a6be; color: white; text-align:center">
                                         الاقسام
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                    <div class="col p-3 align-center"
+                                        style="background-color:rgb(63, 123, 151); color: white; text-align:center">
                                         الاقسام
                                     </div>
                                     <div class="w-100"></div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                    <div class="col p-3 align-center"
+                                        style="background-color: #74a6be; color: white; text-align:center">
                                         الإسعاف
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                    <div class="col p-3 align-center"
+                                        style="background-color:rgb(63, 123, 151); color: white; text-align:center">
                                         السياحة العلاجية
                                     </div>
-                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                    <div class="col p-3 align-center"
+                                        style="background-color: #74a6be; color: white; text-align:center">
                                         الطب الاتصالي
                                     </div>
 
@@ -325,16 +331,15 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title center-align mb-60 text-center">
-                            <span>اطباءنا</span>
-                            <h2>اطبائنا المتميزين</h2>
+                            <br>
+                            <h2 id="department_name">اطبائنا المتميزين</h2>
                             <p>
                                 تطمن على صحتك وخذ الخطوة الاولى للعلاج
                         </div>
                     </div>
                 </div>
                 <div class="row" id="doctors">
-                    <!-- injuct doctor here -->
-
+                    <div id="loading">جاري التحميل ...</div>
 
                 </div>
             </div>
@@ -497,8 +502,8 @@
     <script>
         indexInit();
 
-        $(document).ready(function() {
-            $("#patient").change(function() {
+        $(document).ready(function () {
+            $("#patient").change(function () {
                 if ($(this).val() === "add_new") {
                     $("#patientDetails").slideDown();
                     $("#patientIdField").slideUp();

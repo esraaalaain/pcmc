@@ -48,19 +48,11 @@ async function departmentInit() {
     fetchDoctorsBasedOnSpecilization(specialization).then(() => {
         console.log("Doctors:", doctorsList);
         const container = document.getElementById("doctors");
-
-
-
         doctorsList.forEach(doctor => {
-
-
-
             let profile = stripHtml(doctor.profile);
             // STRIP HTML TAGS OF PROFILE
 
             let avatar = doctor.img_url ? `https://his.easydoc.sa/${doctor.img_url}` : "https://his.easydoc.sa/uploads/%D8%AF_%D9%87%D9%8A%D8%AB%D9%851.png";
-
-
             container.innerHTML += `
                 <div class="col-lg-4 col-md-12">
                     <div class="pricing-box text-center mb-60">
@@ -248,48 +240,34 @@ function displayDoctors(doctors) {
     container.innerHTML = "";
 
     doctors.forEach(doctor => {
-        const doctorBox = document.createElement("div");
-        doctorBox.classList.add("col-lg-4", "col-md-12");
 
-        const doctorProfile = doctor.profile ? doctor.profile.replace(/<\/?[^>]+(>|$)/g, "") : "لا يوجد وصف متاح";
+        let profile = stripHtml(doctor.profile);
+        // STRIP HTML TAGS OF PROFILE
 
-        let scheduleHTML = "<h5>الأوقات المتاحة</h5><ul class='d-flex flex-wrap'>";
-        if (doctor.time_schedule && doctor.time_schedule.length > 0) {
-            doctor.time_schedule.forEach(slot => {
-                scheduleHTML += `<li class="bg-white rounded-pill p-1 m-1">${translateWeekday(slot.weekday)}</li>`;
-            });
-        } else {
-            scheduleHTML += "<li>لا يوجد جدول زمني متاح</li>";
-        }
-        scheduleHTML += "</ul>";
-
-        // Construct doctor card
-        doctorBox.innerHTML = `
-            <div class="pricing-box text-center mb-60 pt-3">
-                <div class="row align-items-center">
-                    <div class="col-3">
-                        <img class="rounded-circle border border-primary" src="https://his.easydoc.sa/${doctor.img_url}" alt="doctor-image">
-                    </div>
-                    <div class="col-9 text-right">
-                        <h4>${doctor.name}</h4>
-                        <div class="price-count mb-30">
-                            <h2>${doctor.department_name || "طبيب"}</h2>
+        let avatar = doctor.img_url ? `https://his.easydoc.sa/${doctor.img_url}` : "https://his.easydoc.sa/uploads/%D8%AF_%D9%87%D9%8A%D8%AB%D9%851.png";
+        container.innerHTML += `
+                <div class="col-lg-4 col-md-12">
+                    <div class="pricing-box text-center mb-60">
+                        <div class="pricing-head">
+                            <h4>${doctor.name}</h4>
+                            <div class="price-count mb-30">
+                                <h2>${doctor.department_name}</h2>
+                            </div>
+                            <img src="${avatar}" alt="pricon">
+                        </div>
+                        <div class="pricing-body mb-40 text-right bold" style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
+                            ${profile}
+                        </div>
+                        <div class="pricing-btn">
+                        <div class="book-now-btn" data-doctor-id="${doctor.id}" 
+                       data-doctor-name="${doctor.name}">
+                            <span class="btn">إحجز الأن <i
+                                    class="fas fa-chevron-right "></i></span>
+                                    </div>
                         </div>
                     </div>
                 </div>
-                <div class="pricing-body text-right p-3">
-                    <p>${doctorProfile}</p>
-                    ${scheduleHTML}
-                </div>
-                <div class="pricing-btn">
-                    <a class="btn book-now-btn" 
-                       data-doctor-id="${doctor.id}" 
-                       data-doctor-name="${doctor.name}">إحجز الأن <i class="fas fa-chevron-right"></i></a>
-                </div>
-            </div>
-        `;
-
-        container.appendChild(doctorBox);
+            `;
     });
 
     attachBookingEventListeners();
