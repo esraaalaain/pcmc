@@ -320,21 +320,20 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-title center-align mb-60 text-center">
-                            <span>اطباءنا</span>
-                            <h2>اطبائنا المتميزين</h2>
+                            <br>
+                            <h2 id="department_name">اطبائنا المتميزين</h2>
                             <p>
                                 تطمن على صحتك وخذ الخطوة الاولى للعلاج
                         </div>
                     </div>
                 </div>
                 <div class="row" id="doctors">
-                    <!-- injuct doctor here -->
-
+                    <div id="loading">جاري التحميل ...</div>
 
                 </div>
             </div>
         </section>
-
+        <?php include 'whatsapp.php' ?>
     </main>
     <!-- main-area-end -->
     <?php include 'layouts/footer.php'; ?>
