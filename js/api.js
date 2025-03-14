@@ -107,17 +107,19 @@ async function specializationPlacement() {
 
             specializations.forEach(spec => {
                 const uriEncodedName = encodeURIComponent(spec.name);
-
                 const specializationItem = `
-                    <div class="col-lg-3 col-md-4 col-sm-6  border bg-white">
-                        <a href="department.php?name=${uriEncodedName}">
-                            <div class="department-item ">
-                                <h3>${spec.name}</h3>
-                                <p>${spec.description}</p>
+                    <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-item  position-relative">
+                            <div class="icon">
+                                <i class="fas fa-heartbeat"></i>
                             </div>
-                        </a>
+                            <a href="department.php?name=${uriEncodedName}" class="stretched-link">
+                                <h3>${spec.name}</h3>
+                            </a>
+                            <p>${spec.description}.</p>
+                        </div>
                     </div>
-                `;
+                `
                 container.innerHTML += specializationItem;
             });
         }
@@ -249,7 +251,7 @@ function displayDoctors(doctors) {
                 <div class="col-lg-4 col-md-12">
                     <div class="pricing-box text-center mb-60">
                         <div class="pricing-head">
-                            <h4>${doctor.name}</h4>
+                                <h4>${doctor.name}</h4>
                             <div class="price-count mb-30">
                                 <h2>${doctor.department_name}</h2>
                             </div>
@@ -264,9 +266,9 @@ function displayDoctors(doctors) {
                             <span class="btn">إحجز الأن <i
                                     class="fas fa-chevron-right "></i></span>
                                     </div>
+                            </div>
                         </div>
                     </div>
-                </div>
             `;
     });
 

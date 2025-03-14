@@ -86,6 +86,89 @@
             color: white !important;
 
         }
+
+        /*--------------------------------------------------------------
+        # Services Section
+        --------------------------------------------------------------*/
+        .services .service-item {
+            background-color: #ffffff !important;
+            text-align: center;
+            border: 1px solid color-mix(in srgb, #444444, transparent 85%) !important;
+            padding: 80px 20px;
+            transition: all ease-in-out 0.3s;
+            /* height: 100%; */
+            height: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 20px;
+        }
+
+        .services .service-item .icon {
+            margin: 0 auto;
+            width: 64px;
+            height: 64px;
+            background: #166A90 !important;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: 0.3s;
+            transform-style: preserve-3d;
+        }
+
+        .services .service-item .icon i {
+            color: #ffffff !important;
+            font-size: 28px;
+            transition: ease-in-out 0.3s;
+        }
+
+        .services .service-item .icon::before {
+            position: absolute;
+            content: "";
+            left: -8px;
+            top: -8px;
+            height: 100%;
+            width: 100%;
+            background: color-mix(in srgb, #166A90, transparent 80%) !important;
+            border-radius: 5px;
+            transition: all 0.3s ease-out 0s;
+            transform: translateZ(-1px);
+        }
+
+        .services .service-item h3 {
+            font-weight: 700;
+            margin: 10px 0 15px 0;
+            font-size: 22px;
+        }
+
+        .services .service-item p {
+            line-height: 24px;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .services .service-item:hover {
+            background: #166A90 !important;
+            border-color: #166A90 !important;
+        }
+
+        .services .service-item:hover .icon {
+            background: #ffffff !important;
+        }
+
+        .services .service-item:hover .icon i {
+            color: #166A90 !important;
+        }
+
+        .services .service-item:hover .icon::before {
+            background: color-mix(in srgb, #ffffff, transparent 70%) !important;
+        }
+
+        .services .service-item:hover h3,
+        .services .service-item:hover p {
+            color: #ffffff !important;
+        }
     </style>
 </head>
 
@@ -107,11 +190,13 @@
                                         <div class="col-md-6">
                                             <h2>الرعاية الاولية الطبية
                                                 <span><br>شريكك في الصحة</span>
-                                    </h2>
+                                            </h2>
                                             <p style="margin: 0; padding:0">تعد شركة الرعاية الاولية الطبية مركز
-                                        الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات طبية
-                                                شاملة وعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية وشاملة.
-                                    </p>
+                                                الرعاية الصحسة الاولية الموثوق به في قلب مكة المكرمة. نحن نقدم خدمات
+                                                طبية
+                                                شاملة وعطوفة وبأسعار معقولة للمرضى من جميع الاعمار في بيئة عمل ترحيبية
+                                                وشاملة.
+                                            </p>
                                         </div>
                                         <div class="col-md-6">
                                         </div>
@@ -203,6 +288,7 @@
                 </div>
             </div>
         </section>
+
         <!-- services-area-end -->
         <section class="newslater-area pb-50"
             style="background-image: url(img/an-bg/an-bg06.png);background-position: center bottom; background-repeat: no-repeat;">
@@ -293,21 +379,17 @@
             </div>
         </section>
 
-        <!-- department-area -->
-        <section class="department-area cta-bg pb-70 mt-10 fix"
-            style="background-image:url(img/an-bg/an-bg05.png); background-size: contain;">
+        <section class="services section">
+            <div class="section-title mb-50 text-center">
+                <span>أقسامنا</span>
+                <h2>استكشف أقسامنا الطبية</h2>
+            </div>
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                        <div class="section-title mb-50 text-center">
-                            <span>أقسامنا</span>
-                            <h2>استكشف أقسامنا الطبية</h2>
-                        </div>
-                        <div class="row" id="departments">
-                            <!-- Specializations will be injected here -->
-                        </div>
-                    </div>
+
+                <div class="row " id="departments">
+                    <div id="loading">جاري التحميل ...</div>
                 </div>
+
             </div>
         </section>
         <div class="loading" id="loading"></div>
