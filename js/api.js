@@ -1,8 +1,94 @@
 let doctorsList = [];
-let specializations = [
+let specializations = [];
 
-];
+async function fetchDoctorsBasedOnSpecilization(spcalization) {
+    const apiUrl = `${path}/doctors`;
+    const loadingElement = document.getElementById("loading");
+    const container = document.querySelector(".pricing-area .row");
 
+    try {
+        const response = await fetch(apiUrl, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+                "Authorization": "Basic cGNtYzpFQHN5RG9jQHBjbWM="
+            },
+        });
+        console.log("this is response", response);
+        if (!response.ok) {
+            throw new Error(`HTTP Error: ${response.status}`);
+        }
+        const doctors = await response.json();
+        console.log("doctors", doctors);
+        doctorsList = doctors.rows.filter(doctor => doctor.department_name === spcalization);
+
+        if (doctorsList.length === 0) {
+            container.innerHTML = `<p style="color: red; text-align: center; margin-top: 3rem">لا يوجد أطباء حاليين في هذا القسم. </p>`;
+        }
+
+
+
+    } catch (error) {
+        console.error("Error fetching doctors:", error.message);
+        container.innerHTML = `<p style="color: red; text-align: center;">حدث خطأ أثناء تحميل البيانات. </p>`;
+    } finally {
+        loadingElement.style.display = "none";
+    }
+}
+
+async function departmentInit() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const specialization = urlParams.get("name");
+
+    document.getElementById("department_name").textContent = specialization;
+
+    console.log("Getting doctors of specialization:", specialization);
+
+    fetchDoctorsBasedOnSpecilization(specialization).then(() => {
+        console.log("Doctors:", doctorsList);
+        const container = document.getElementById("doctors");
+
+
+
+        doctorsList.forEach(doctor => {
+
+
+
+            let profile = stripHtml(doctor.profile);
+            // STRIP HTML TAGS OF PROFILE
+
+            let avatar = doctor.img_url ? `https://his.easydoc.sa/${doctor.img_url}` : "https://his.easydoc.sa/uploads/%D8%AF_%D9%87%D9%8A%D8%AB%D9%851.png";
+
+
+            container.innerHTML += `
+                <div class="col-lg-4 col-md-12">
+                    <div class="pricing-box text-center mb-60">
+                        <div class="pricing-head">
+                            <h4>${doctor.name}</h4>
+                            <div class="price-count mb-30">
+                                <h2>${doctor.department_name}</h2>
+                            </div>
+                            <img src="${avatar}" alt="pricon">
+                        </div>
+                        <div class="pricing-body mb-40 text-right bold" style="height: 100px; overflow: hidden; text-overflow: ellipsis;">
+                            ${profile}
+                        </div>
+                        <div class="pricing-btn">
+                        <div class="book-now-btn" data-doctor-id="${doctor.id}" 
+                       data-doctor-name="${doctor.name}">
+                            <span class="btn">إحجز الأن <i
+                                    class="fas fa-chevron-right "></i></span>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+        attachBookingEventListeners();
+    });
+
+}
 
 async function indexInit() {
     document.addEventListener("DOMContentLoaded", async () => {
@@ -32,7 +118,7 @@ async function specializationPlacement() {
 
                 const specializationItem = `
                     <div class="col-lg-3 col-md-4 col-sm-6  border bg-white">
-                        <a href="department.html?name=${uriEncodedName}">
+                        <a href="department.php?name=${uriEncodedName}">
                             <div class="department-item ">
                                 <h3>${spec.name}</h3>
                                 <p>${spec.description}</p>
@@ -102,6 +188,7 @@ async function fetchDoctors() {
         const doctors = await response.json();
         doctorsList = doctors.rows;
         displayDoctors(doctorsList);
+
     } catch (error) {
         console.error("Error fetching doctors:", error.message);
         container.innerHTML = `<p style="color: red; text-align: center;">حدث خطأ أثناء تحميل البيانات. </p>`;
@@ -231,12 +318,22 @@ function getAvailableSlotByDoctorByDate() {
 }
 
 function attachBookingEventListeners() {
+    console.log("Attaching booking event listeners");
     $(document).ready(function () {
+        console.log("Document ready");
         $(".book-now-btn").click(function () {
+            console.log("Click registered");
             // Get doctor data from button attributes
             let doctorId = $(this).data("doctor-id");
+            console.log("Doctor ID:", doctorId);
             let doctorName = $(this).data("doctor-name");
             let currentDoctor = doctorsList.find(doctor => doctor.id === doctorId);
+
+
+            console.log("Doctor data:", currentDoctor);
+
+            console.log(doctorsList);
+
             let doctorVisitType = currentDoctor.doctor_visit;
             // Set doctor details inside the modal
             $("#dr-name").val(doctorName);

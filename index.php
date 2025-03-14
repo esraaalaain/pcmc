@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="ar" dir="rtl">
-<!-- rtl -->
 
 <head lang="ar">
     <meta charset="utf-8">
@@ -15,7 +14,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <script src="https://kit.fontawesome.com/fd166e4c96.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="css/dripicons.css">
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="css/default.css">
@@ -65,15 +65,6 @@
             transition: all 0.3s;
         }
 
-        .weekday-picker {
-            /* display: flex; */
-            /* border: 2px solid #0a1a41; */
-            /* border-radius: 10px;
-            gap: 10px;
-            overflow: hidden;
-            width: fit-content; */
-        }
-
         .day-btn {
             flex: 1;
             text-align: center;
@@ -98,88 +89,7 @@
 </head>
 
 <body>
-    <!-- header -->
-    <header class="header-area">
-        <div class="header-top second-header d-none d-md-block">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 col-md-3 d-none d-lg-block">
-                    </div>
-                    <div class="col-lg-4 col-md-8 d-none  d-md-block">
-                        <div class="header-cta">
-                            <ul>
-                                <li>
-                                    <i class="icon dripicons-mail"></i>
-                                    <span>Support@pcmc.med.sa</span>
-                                </li>
-                                <li>
-                                    <i class="icon dripicons-phone"></i>
-                                    <span>0124222240</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 col-md-3 d-none d-lg-block">
-                        <div class="header-social text-right">
-                            <span>
-                                <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
-                                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                                <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            </span>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!--  -->
-        <div id="header-sticky" class="menu-area">
-            <div class="container">
-                <div class="second-menu">
-                    <div class="row align-items-center" style="justify-content: space-between;">
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo">
-                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="main-menu text-right pr-15">
-                                <nav id="mobile-menu">
-                                    <ul>
-                                        <li class="has-sub">
-                                            <a href="#">الرئيسية</a>
-                                        </li>
-
-                                        <li class="has-sub pr-5">
-                                            <a href="#services">الخدمات</a>
-
-                                        </li>
-
-                                        <li class="has-sub">
-                                            <a href="#departments">الأقسام</a>
-                                        </li>
-
-                                        <li class="has-sub">
-                                        <li>
-                                            <a href="#">من نحن</a>
-                                        </li>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-lg-2 d-none d-lg-block text-left">
-                            <a href="https://wa.me/9660124222240" class="top-btn">احجز الآن <i
-                                    class="fas fa-chevron-right"></i></a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-end -->
+    <?php include 'layouts/header.php'; ?>
     <!-- main-area -->
     <main>
         <!-- slider-area -->
@@ -190,7 +100,7 @@
                     style="background-image:url(img/an-bg/header-bg.png)">
                     <div class="container">
                         <div class="row align-items-center">
-                            <div class="col-lg-6">
+                            <div class="col-lg-5">
                                 <div class="slider-content s-slider-content  text-right">
                                     <h2 data-animation="fadeInUp" data-delay=".4s">الرعاية الاولية الطبية
                                         <span>شريكك في الصحة</span>
@@ -205,8 +115,31 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <!-- مربعات هنا -->
+                            <div class="col-lg-7">
+                                <div class="row">
+                                    <div class=" col  p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                        <i class="fa-solid fa-house"></i>
+                                        الاطباء
+                                    </div>
+                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                        الاقسام
+                                    </div>
+                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                        الاقسام
+                                    </div>
+                                    <div class="w-100"></div>
+                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                        الإسعاف
+                                    </div>
+                                    <div class="col p-3 align-center" style="background-color:rgb(63, 123, 151); color: white; text-align:center">
+                                        السياحة العلاجية
+                                    </div>
+                                    <div class="col p-3 align-center" style="background-color: #74a6be; color: white; text-align:center">
+                                        الطب الاتصالي
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -409,121 +342,7 @@
 
     </main>
     <!-- main-area-end -->
-    <!-- footer -->
-
-    <footer class="footer-bg footer-p">
-        <div class="overly"><img src="img/an-bg/footer-bg.png" alt="rest"></div>
-        <div class="footer-top pb-30" style="background-color: #ECF1FA;">
-            <div class="container">
-                <div class="row justify-content-between">
-
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="flog mb-35">
-                                <a href="index.html"><img src="img/logo/logo.png" alt="logo"></a>
-                            </div>
-                            <div class="footer-text mb-20">
-                                <p>نحن ملتزمون بتقديم أفضل خدمات الرعاية الصحية عن بعد، مما يتيح لك التواصل مع الأطباء
-                                    بكل
-                                    سهولة وراحة.</p>
-                            </div>
-                            <div class="footer-social">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xl-2 col-lg-2 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="f-widget-title">
-                                <h5>روابطنا</h5>
-                            </div>
-                            <div class="footer-link">
-                                <ul>
-                                    <li><a href="index.html"><i class="fas fa-chevron-right"></i> الرئيسية</a></li>
-                                    <li><a href="#services"><i class="fas fa-chevron-right"></i> الخدمات</a></li>
-
-                                    <li><a href="#departments"><i class="fas fa-chevron-right"></i> الأقسام</a></li>
-
-                                    <li><a href="#about"><i class="fas fa-chevron-right"></i> من نحن</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="f-widget-title">
-                                <h5>للشكاوى والاقتراحات</h5>
-                            </div>
-                            <div class="footer-link">
-                                <div class="f-contact">
-                                    <ul>
-                                        <li>
-                                            <i class="icon dripicons-phone "></i>
-                                            0124222240
-                                        </li>
-                                        <li>
-                                            <i class="icon dripicons-mail"></i>
-                                            <a href="mailto:support@pcmc.med.sa">support@pcmc.med.sa</a>
-                                        </li>
-                                        <li>
-                                            <i class="fal fa-map-marker-alt"></i>
-                                            <span>مكة المكرمة، المملكة العربية السعودية</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-xl-3 col-lg-3 col-sm-6">
-                        <div class="footer-widget mb-30">
-                            <div class="f-widget-title">
-                                <h5> للدعم الفني</h5>
-                            </div>
-                            <div class="footer-link">
-                                <div class="f-contact">
-                                    <ul>
-
-                                        <li>
-                                            <i class="icon dripicons-mail"></i>
-                                            <a href="mailto:support@pcmc.med.sa">support@pcmc.med.sa</a>
-                                        </li>
-                                        <li>
-                                            <img width="150" src="img/brand/3.png" alt="health">
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright-wrap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copyright-text text-center">
-                            <p>&copy; 2025 جميع الحقوق محفوظة - مركز الرعاية الأولية الطبية - مكة المكرمة | رقم السجل
-                                التجاري: 4031101006 | رقم ضريبة القيمة المضافة: 312266234100003</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- footer-end -->
+    <?php include 'layouts/footer.php'; ?>
     <section>
         <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
@@ -614,8 +433,6 @@
                             </div>
                             <h5 class="mt-3 text-primary">التاريخ المختار: <span id="selectedDate">لايوجد</span></h5>
                             <input type="hidden" id="date" name="date">
-
-                            <!-- <input type="text" class="form-control rounded-pill" id="date" name="date" readonly> -->
                             <label for="aslots" class="pt-3">
                                 <h5 class="text-primary text-right">الوقت المتاح</h5>
                             </label>
@@ -677,29 +494,27 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.3/js/bootstrap.min.js"></script> -->
 
+    <script>
+        indexInit();
 
+        $(document).ready(function() {
+            $("#patient").change(function() {
+                if ($(this).val() === "add_new") {
+                    $("#patientDetails").slideDown();
+                    $("#patientIdField").slideUp();
+
+                } else if ($(this).val() === "patient_id") {
+                    $("#patientIdField").slideDown();
+                    $("#patientDetails").slideUp();
+                } else {
+                    $("#patientDetails").slideUp();
+                    $("#patientIdField").slideUp();
+                }
+            });
+        });
+    </script>
 </body>
 
 
-<script>
-
-    indexInit();
-
-    $(document).ready(function () {
-        $("#patient").change(function () {
-            if ($(this).val() === "add_new") {
-                $("#patientDetails").slideDown();
-                $("#patientIdField").slideUp();
-
-            } else if ($(this).val() === "patient_id") {
-                $("#patientIdField").slideDown();
-                $("#patientDetails").slideUp();
-            } else {
-                $("#patientDetails").slideUp();
-                $("#patientIdField").slideUp();
-            }
-        });
-    });
-</script>
 
 </html>
